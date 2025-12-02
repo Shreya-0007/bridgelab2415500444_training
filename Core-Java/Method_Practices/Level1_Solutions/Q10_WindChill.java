@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Q10_WindChill {
+    public static double calculateWindChill(double temp, double windSpeed) {
+        // Formula as provided
+        return 35.74 + 0.6215 * temp + (0.4275 * temp - 35.75) * Math.pow(windSpeed, 0.16);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Temperature (F): ");
+        double t = sc.nextDouble();
+        System.out.print("Wind speed: ");
+        double w = sc.nextDouble();
+        System.out.printf("Wind Chill = %.2f%n", calculateWindChill(t,w));
+        sc.close();
+    }
+}
