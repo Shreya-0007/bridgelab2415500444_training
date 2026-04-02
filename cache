@@ -1,0 +1,22 @@
+import java.util.*;
+
+public class CacheDemo {
+    static Map<Integer, Integer> cache = new HashMap<>();
+
+    static int cube(int n) {
+        if (cache.containsKey(n)) {
+            System.out.println("From Cache");
+            return cache.get(n);
+        }
+
+        System.out.println("Calculated");
+        int result = n * n * n;
+        cache.put(n, result);
+        return result;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(cube(3)); // calculated
+        System.out.println(cube(3)); // cached
+    }
+}
